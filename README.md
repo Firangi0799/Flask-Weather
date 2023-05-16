@@ -40,7 +40,7 @@ This is a simple Flask application that displays weather information for a given
 
 ## Deployment
 
-The application is deployed on [Render](https://render.com). You can access the live version of the application at [https://your-app-name.onrender.com][https://your-app-name.onrender.com](https://weather-app-1-3acz.onrender.com/).
+The application is deployed on [Render](https://render.com). You can access the live version of the application at [https://your-app-name.onrender.com](https://weather-app-1-3acz.onrender.com/).
 
 ## Contributing
 
