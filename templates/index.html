@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background: linear-gradient(45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Weather App</h1>
+        <form class="mt-4" action="/" method="get">
+            <div class="form-group">
+                <input class="form-control" type="text" name="city" placeholder="Enter a city">
+            </div>
+            <button class="btn btn-primary" type="submit">Get Weather</button>
+        </form>
+{% if city %}
+    <div class="mt-5">
+        <h2 class="text-center mb-4 display-4">{{ city }}</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h3 class="text-center">Current Time:</h3>
+                <p class="text-center">{{ current_time }}</p>
+
+                <h3 class="text-center">Weather Condition:</h3>
+                <p class="text-center">{{ condition }}</p>
+
+                <h3 class="text-center">Description:</h3>
+                <p class="text-center">{{ description }}</p>
+            </div>
+            <div class="col-md-6">
+                <h3 class="text-center">Temperature:</h3>
+                <p class="text-center">{{ temp }}°C</p>
+
+                <h3 class="text-center">Humidity:</h3>
+                <p class="text-center">{{ humidity }}</p>
+
+                <h3 class="text-center">Pressure:</h3>
+                <p class="text-center">{{ pressure }}</p>
+
+                <h3 class="text-center">Wind:</h3>
+                <p class="text-center">{{ wind }}</p>
+            </div>
+        </div>
+    </div>
+{% endif %}
+
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
