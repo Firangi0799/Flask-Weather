@@ -7,7 +7,7 @@ This is a simple Flask application that displays weather information for a given
 1. Clone the repository:
 
    ```
-   git clone https://github.com/your-username/weather-app.git
+   git clone https://github.com/Firangi0799/Flask-Weather.git
    ```
 
 2. Install the required dependencies:
@@ -32,7 +32,7 @@ This is a simple Flask application that displays weather information for a given
    python app.py
    ```
 
-2. Open your web browser and go to `http://localhost:5000` to access the application.
+2. Open your web browser and go to `https://weather-app-1-3acz.onrender.com` to access the application.
 
 3. Enter the name of a city in the input field and click the "Get Weather" button.
 
