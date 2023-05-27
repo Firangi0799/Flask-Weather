@@ -4,8 +4,19 @@ import pytz
 from geopy.geocoders import Photon
 from timezonefinder import TimezoneFinder
 from datetime import datetime
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///city_searches.db'
+db = SQLAlchemy(app)
+
+class City(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(50), nullable=False)
+    timestamp = db.Column(db.DateTime, default=datetime.utcnow)
+
+    def __repr__(self):
+        return f"City('{self.name}', '{self.timestamp}')"
 
 @app.route("/")
 def index():
@@ -35,8 +46,13 @@ def index():
     humidity = json_data['main']['humidity']
     pressure = json_data['main']['pressure']
     wind = json_data['wind']['speed']
+    
+    searched_city = City(name=city)
+    db.session.add(searched_city)
+    db.session.commit()
 
     return render_template("index.html", city=city, current_time=current_time, condition=condition, description=description, temp=temp, humidity=humidity, pressure=pressure, wind=wind)
 
 if __name__ == "__main__":
+    db.create_all()
     app.run(debug=True)
