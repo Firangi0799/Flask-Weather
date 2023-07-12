@@ -6,24 +6,26 @@
     <title>Weather App</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        body {
-            background: linear-gradient(45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
-            background-size: 400% 400%;
-            animation: gradient 15s ease infinite;
-        }
+    body {
+        background: linear-gradient(45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+        background-size: 100% 100%; /* Change background-size to cover the entire screen */
+        animation: gradient 15s ease infinite;
+        margin: 0; /* Remove default body margin */
+        height: 100vh; /* Set the body height to 100% of the viewport height */
+    }
 
-        @keyframes gradient {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
+    @keyframes gradient {
+        0% {
+            background-position: 0% 50%;
         }
-    </style>
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+</style>
 </head>
 <body>
     <div class="container">
