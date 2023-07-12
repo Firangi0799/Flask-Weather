@@ -1,5 +1,3 @@
-# P.S: THE HOSTED SITE IS DOWN AS IT WAS VERY INEFFICIENT AND MESSY!
-
 # Weather App 
 
 This is a simple Flask application that displays weather information for a given city. It uses the OpenWeatherMap API to fetch weather data and the Photon geocoding API to obtain the location and timezone information for the city. The application is deployed on Render.
