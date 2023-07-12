@@ -5,6 +5,8 @@ from geopy.geocoders import Photon
 from timezonefinder import TimezoneFinder
 from datetime import datetime
 
+app = Flask(__name__)
+
 @app.route("/")
 def index():
     city = request.args.get("city")
@@ -33,13 +35,8 @@ def index():
     humidity = json_data['main']['humidity']
     pressure = json_data['main']['pressure']
     wind = json_data['wind']['speed']
-    
-    searched_city = City(name=city)
-    db.session.add(searched_city)
-    db.session.commit()
 
     return render_template("index.html", city=city, current_time=current_time, condition=condition, description=description, temp=temp, humidity=humidity, pressure=pressure, wind=wind)
 
 if __name__ == "__main__":
-    db.create_all()
     app.run(debug=True)
